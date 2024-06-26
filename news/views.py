@@ -1,12 +1,20 @@
+from typing import Any
 from django.shortcuts import render
 from django.views.generic import TemplateView
 from django.views import View
+from . models import News
 
 
 # Create your views here.
 
 class HomePageView(TemplateView):
     template_name = 'index.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['trending'] =News.objects.all().order_by('-pub_date')[:3]
+        return context
+
 
 # class HomePageView(View):
 #     def get(self,request):
