@@ -21,6 +21,7 @@ class News(models.Model):
     pub_date = models.DateTimeField(auto_now=True)
     created_by = models.ForeignKey(User, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now=True)
+    image_url = models.URLField(null=True,blank=True)
 
     class Meta:
         ordering =['title']
