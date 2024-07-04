@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'auditlog',
     'news_api',
     'rest_framework',
+    'django_filters',
     
 ]
 
@@ -165,6 +166,7 @@ EMAIL_HOST_PASSWORD = "lkjo itht ppli pmjz"
 
 
 REST_FRAMEWORK = {
+    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
     'PAGE_SIZE': 10
 }
