@@ -3,7 +3,7 @@ from django.shortcuts import render,redirect,get_object_or_404
 from django.views.generic import TemplateView
 from django.views.generic.detail import DetailView
 from django.views import View
-from . models import News,Category,ContactUs,Comment
+from . models import News,Category,ContactUs,Comment,TeamMember
 from django.template.loader import render_to_string
 from django.core.mail import send_mail
 from django.core.mail import EmailMultiAlternatives
@@ -34,7 +34,13 @@ class HomePageView(TemplateView):
         return context
     
     
-    
+class TeamViews(TemplateView):
+    template_name = 'about.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['team'] = TeamMember.objects.all()
+        return context   
 
 
 
@@ -58,6 +64,9 @@ class AboutUsPageView(TemplateView):
 
 class ContactPageView(TemplateView):
     template_name = 'contact.html'
+
+
+
 
 # class LatestNewsPageView(DetailView):
 #     template_name = 'latest_news.html'

@@ -100,6 +100,16 @@ class Comment(models.Model):
     def __str__(self):
         return f'Comment by {self.author} on {self.post}'
 
+class TeamMember(models.Model):
+    image1 = models.ImageField(upload_to='team')
+    name = models.CharField(max_length=60)
+    proff = models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.name
+    
+
+
 auditlog.register(Category,serialize_data=True)
 auditlog.register(News)
 auditlog.register(Comment)
