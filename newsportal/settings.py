@@ -165,8 +165,8 @@ EMAIL_HOST = "smtp.gmail.com"
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
 EMAIL_PORT = 587
-EMAIL_HOST_USER = "info.demodjango@gmail.com"
-EMAIL_HOST_PASSWORD = "lkjo itht ppli pmjz"
+EMAIL_HOST_USER = "********"
+EMAIL_HOST_PASSWORD = "***********"
 
 
 REST_FRAMEWORK = {
