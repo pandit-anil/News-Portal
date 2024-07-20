@@ -1,8 +1,8 @@
 from django.contrib import admin
-from . models import Category,News,Ads,Systemsetting,ContactUs,Comment
+from . models import Category,News,Ads,Systemsetting,ContactUs,Comment,TeamMember
 
 
-# Register your models here.
+admin.site.register(TeamMember)
 admin.site.register(Category)
 admin.site.register(ContactUs)
 
